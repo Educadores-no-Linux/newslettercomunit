@@ -39,7 +39,7 @@ class emailController extends Controller
         $email = Email::all();
          Email::create($request->all());
 
-        return redirect('/');
+        return view('register');
     
 
     }
