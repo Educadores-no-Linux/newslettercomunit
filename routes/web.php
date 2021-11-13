@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\DB;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,9 +17,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
 Route::post('/create/email', [App\Http\Controllers\emailController::class, 'store'])->name('registra_produto');
 
+
+
+$users = DB::table('users')->count();
+
+if($users==0){
+    Auth::routes(['register' => true]);
+}else{
+    Auth::routes(['register' => false]);
+}
