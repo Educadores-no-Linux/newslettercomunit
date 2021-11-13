@@ -24,9 +24,10 @@
                     <h1 class="mb-5">Cadastre seu e-mail</h1>
                 </div>
                 <div class="col-md-10 col-lg-8 col-xl-7 mx-auto position-relative">
-                    <form>
+                    <form method="POST" action="/create/email">
+                        @csrf
                         <div class="row">
-                            <div class="col-12 col-md-9 mb-2 mb-md-0"><input class="form-control form-control-lg" type="email" placeholder="Enter your email..."></div>
+                            <div class="col-12 col-md-9 mb-2 mb-md-0"><input class="form-control form-control-lg" type="email" name="email" placeholder="Enter your email..."></div>
                             <div class="col-12 col-md-3"><button class="btn btn-primary btn-lg" type="submit">Cadastrar</button></div>
                         </div>
                     </form>

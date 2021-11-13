@@ -20,3 +20,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::post('/create/email', [App\Http\Controllers\emailController::class, 'store'])->name('registra_produto');
+
